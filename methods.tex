@@ -13,6 +13,12 @@ Genomes assembled by...
 
 Annotation done by...
 
-Repeats found using custom script, with length set to find anything over 30 bases. Insertions discovered via multiple sequence alignment of Niphates erecta and Niphates digitalis. Alignment manually inspected for insertion regions. GC content calculated using seqinr package in R studio. 
+Following completion of assembly and annotation, the two sequences were aligned using MAFFT v7. Insertions were discovered via this alignment by manual inspection. Any position longer than 5 bases that was found in \emph{N. erecta} but not \emph{N. digitalis} was considered an insertion. All insertions were run through NCBI BLAST to check for identity.
+
+To evaluate if these insertions were present in downstream products, cDNA was generated from an RNA isolation of \emph{N. erecta} and amplified via PCR. The resulting fragments were sequenced using Sanger sequencing.
+
+Inverted repeats were found using a custom script, with length set to find anything over 30 bases. Inverted repeats were also run through NCBI BLAST to check for identity and lack of contamination. In addition, all inverted repeat results were aligned via MAFFT to determine similarity.
+
+Phylogenetic analysis was done by...
 
 \end{document}

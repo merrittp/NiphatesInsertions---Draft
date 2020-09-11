@@ -2,17 +2,18 @@
 \usepackage[utf8]{inputenc}
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{parskip}
+\usepackage{graphicx}
 \setlength{\parskip}{1em}
-
 \usepackage{subfiles}
 
 \begin{document}
 
+\graphicspath{{Images/}}
+
 \subfile{title.tex}
-\subfile{abstract.tex}
 \subfile{introduction.tex}
-\subfile{methods.tex}
 \subfile{results.tex}
 \subfile{discussion.tex}
+\subfile{methods.tex}
 
 \end{document}

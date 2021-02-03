@@ -3,4 +3,42 @@
 
 \section{Methods}
 
+\subsection{DNA Isolation, sequencing, assembly, and annotation}
+Three mitochondrial genomes had been previously sequenced - \emph{Amphimedon queenslandica} (NC\_008944.1), \emph{Xestospongia muta} (NC\_010211.1), and \emph{Xestospongia testudinaria}. In addition, three mitochondrial genomes were sequenced and assembled for this study - \emph{Niphates digitalis, Niphates erecta,} and \emph{Neopetrosia proxima}.
+
+\subsubsection{mt-DNA isolation and sequencing}
+Total DNA was obtained using a modified phenol-chloroform protocol. A combination of species-specific and Porifera-wide primers were used in conjunction with both normal and Long and Accurate PCR techniques to obtain mitochondrial DNA fragments.
+Subsequently, \emph{Niphates erecta} and \emph{Neopetrosia proxima} were sequenced using Illumina technology. Libraries were prepared using the Illumina TruSeq DNA PCR-Free Library Prep Kits. The \emph{Niphates digitalis} mt-sequences were sequenced via Sanger sequencing using the TOPO Shotgun Subcloning Kit from Invitrogen and high-throughput plasmid preparation and sequencing. All sequencing was done by the DNA Sequencing and Synthesis Facility of the ISU Office of Biotechnology.
+
+\subsubsection{mt-DNA assembly and annotation}
+
+Returned sequences from \emph{N. erecta} and \emph{N. proxima} were assembled using a combination of Abyss, Mira, PCAP, and SPAdes. Assembly results were compared and compiled together to form merged mt-genome assemblies. The STADEN package and Phred basecaller were used to assemble the sequences from \emph{Niphates digitalis}. PCR and Sanger sequencing was used to resolve ambiguities in all three species. 
+
+Sequences were annotated using flip v2.1.1 to identify ORFs. These ORFs were searched against local databases, GenBank, and NCBI BLAST to identify them. Protein-coding genes were aligned with their homologs to determine their start and stop codons, and \emph{rnl} and \emph{rns} were identified via homology to other ribosomal RNAs. Transfer RNAs were identified using tRNAscan-SE program, while RNAWeasel was used to search for introns in coding sequences.
+
+\subsubsection{\emph{Niphate digitalis} nuclear genome}
+
+[PAC-Bio? Maybe? **NEED HELP HERE**]
+
+\subsection{RNA-seq, read mapping, and transcript annotation}
+
+[**ASK McKenzie about how RNA was extracted, prepped, and sequenced. Ask Viraj about assembly protocol. This was written the best from my memory from discussions.]
+
+Two different versions of the transcriptome were used in this study. To begin, RNA-seq reads from \emph{Niphates erecta} were assembled using TRINITY and SPades into a nucleotide assembly of transcripts. Additionally, transcripts were translated and evaluated for ORFS using Transdecoder to produce an amino acid/protein assembly. 
+
+Individual gene products of \emph{atp8} and \emph{atp9}, were identified in the transcriptome using two different methods. Transcripts of \emph{atp8} were found using Trinnotate, and their identity confirmed via alignment to \emph{atp8} sequences from \emph{Homo sapiens} and \emph{Amphimedon queenslandica}. This sequence was BLASTed against the nuclear genome of \emph{Niphates digitalis} for identification of \emph{atp8} in the nuclear genome. 
+
+To identify transcripts of \emph{atp9}, the nuclear sequence of \emph{atp9} from \emph{Amphimedon queenslandica} was downloaded from NCBI and BLASTed against the \emph{Niphates erecta} assembled transcriptome. There was a significant drop in e-value after the first two hits, so only the top two hits were considered for downstream analysis. The same sequence was also BLASTed against the \emph{Niphates digitalis} nuclear genome. Once again, there was a significant drop in the e-value after the first two hits, so the top two hits were used for downstream analysis. To confirm their identity, the sequences were aligned using MAFFTv5 to the mitochondrial \emph{atp9} sequence from \emph{Xestospongia testudinaria} and also BLASTed against the NCBI nt/nr database. 
+
+To determine if the location of \emph{atp9} in the \emph{Niphates digitalis} genome was the same as in \emph{Amphimedon queenslandica}, the contigs correlating to the top two BLAST hits were extracted from the \emph{Niphates digitalis} genomes, as well as the contig containing \emph{atp9} from the \emph{Amphimedon queenslandica} nuclear assembly. Dotplots were made comparing the contigs using YASS: genomic similarity search tool. 
+
+Assembled transcripts were mapped to the mitochondrial genome using minimap2 and visualized using Integrated Genomics Viewer.
+
+\subsection{Repeat and insertion analysis}
+Inserts in the \emph{Niphates erecta} mt-genome were manually identified via alignment of both mitochondrial genomes. Alignment was then manually inspected and inserts notated. All insertions were submitted to the NCBI nt/nr database using BLAST to check for contamination and alternate identities. Alignment was viewed in SeaView.
+
+All mitochondrial genomes were analyzed for repeat segments using FINDREP v2.0 (parameters: repeats >=30, subseqs: 30, hairpins: false, strands: both, contigs: any). All unique repeats were submitted to the NCBI nt/nr database using BLAST to check for contamination and then where aligned via MAFFTv5. Repeats were manually grouped via sequence homology into four motifs. Sequences were folded manually due to their short length. 
+
+Locations of both repeats and insertions were visualized in the genome using DNAFeaturesViewer. 
+
 \end{document}
